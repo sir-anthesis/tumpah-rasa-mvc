@@ -1,0 +1,189 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|c:\\users\\user\\source\\repos\\tumpahrasa_mvc\\tumpahrasa_mvc\\models\\tb_recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|solutionrelative:tumpahrasa_mvc\\models\\tb_recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|c:\\users\\user\\source\\repos\\tumpahrasa_mvc\\tumpahrasa_mvc\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|solutionrelative:tumpahrasa_mvc\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|c:\\users\\user\\source\\repos\\tumpahrasa_mvc\\tumpahrasa_mvc\\views\\admin\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|solutionrelative:tumpahrasa_mvc\\views\\admin\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|c:\\users\\user\\source\\repos\\tumpahrasa_mvc\\tumpahrasa_mvc\\models\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|solutionrelative:tumpahrasa_mvc\\models\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|c:\\users\\user\\source\\repos\\tumpahrasa_mvc\\tumpahrasa_mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|solutionrelative:tumpahrasa_mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|c:\\users\\user\\source\\repos\\tumpahrasa_mvc\\tumpahrasa_mvc\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|solutionrelative:tumpahrasa_mvc\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|c:\\users\\user\\source\\repos\\tumpahrasa_mvc\\tumpahrasa_mvc\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|solutionrelative:tumpahrasa_mvc\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|c:\\users\\user\\source\\repos\\tumpahrasa_mvc\\tumpahrasa_mvc\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|solutionrelative:tumpahrasa_mvc\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|c:\\users\\user\\source\\repos\\tumpahrasa_mvc\\tumpahrasa_mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|solutionrelative:tumpahrasa_mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|c:\\users\\user\\source\\repos\\tumpahrasa_mvc\\tumpahrasa_mvc\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{AECE7922-6CD7-4C9D-A1D5-97F24B85ED3E}|TumpahRasa_MVC\\TumpahRasa_MVC.csproj|solutionrelative:tumpahrasa_mvc\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "tb_recipe.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Models\\tb_recipe.cs",
+              "RelativeDocumentMoniker": "TumpahRasa_MVC\\Models\\tb_recipe.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Models\\tb_recipe.cs",
+              "RelativeToolTip": "TumpahRasa_MVC\\Models\\tb_recipe.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAgwCQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T17:06:13.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Views\\Admin\\Create.cshtml",
+              "RelativeDocumentMoniker": "TumpahRasa_MVC\\Views\\Admin\\Create.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Views\\Admin\\Create.cshtml",
+              "RelativeToolTip": "TumpahRasa_MVC\\Views\\Admin\\Create.cshtml",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAAAFcAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T15:40:14.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "TumpahRasa_MVC\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "TumpahRasa_MVC\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AQIAACIAAAAAAAAAAAAQwDUAAACKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T13:51:16.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "TumpahRasa_MVC\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "TumpahRasa_MVC\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAswCMAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T13:50:27.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TumpahRasa_MVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TumpahRasa_MVC\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAF0AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T13:09:44.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Model1.Context.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Models\\Model1.Context.cs",
+              "RelativeDocumentMoniker": "TumpahRasa_MVC\\Models\\Model1.Context.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Models\\Model1.Context.cs",
+              "RelativeToolTip": "TumpahRasa_MVC\\Models\\Model1.Context.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T14:28:05.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "web.config",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Views\\web.config",
+              "RelativeDocumentMoniker": "TumpahRasa_MVC\\Views\\web.config",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Views\\web.config",
+              "RelativeToolTip": "TumpahRasa_MVC\\Views\\web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-06-10T13:17:37.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Web.config",
+              "RelativeDocumentMoniker": "TumpahRasa_MVC\\Web.config",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Web.config",
+              "RelativeToolTip": "TumpahRasa_MVC\\Web.config",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAC8AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-06-10T13:15:24.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "TumpahRasa_MVC\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "TumpahRasa_MVC\\Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T13:09:37.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Models\\Model1.edmx",
+              "RelativeDocumentMoniker": "TumpahRasa_MVC\\Models\\Model1.edmx",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\TumpahRasa_MVC\\TumpahRasa_MVC\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "TumpahRasa_MVC\\Models\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-06-10T13:06:37.756Z",
+              "EditorCaption": " [Diagram1]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

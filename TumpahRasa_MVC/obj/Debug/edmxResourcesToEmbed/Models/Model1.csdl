@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_tumpahrasaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_admin">
+    <Key>
+      <PropertyRef Name="id_admin" />
+    </Key>
+    <Property Name="id_admin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_recipe" Relationship="Self.FK__tb_recipe__id_ad__398D8EEE" FromRole="tb_admin" ToRole="tb_recipe" />
+  </EntityType>
+  <EntityType Name="tb_comment">
+    <Key>
+      <PropertyRef Name="id_comment" />
+    </Key>
+    <Property Name="id_comment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_member" Type="Int32" />
+    <Property Name="id_recipe" Type="Int32" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="rating" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_member" Relationship="Self.FK__tb_commen__id_me__3E52440B" FromRole="tb_comment" ToRole="tb_member" />
+    <NavigationProperty Name="tb_recipe" Relationship="Self.FK__tb_commen__id_re__3F466844" FromRole="tb_comment" ToRole="tb_recipe" />
+    <NavigationProperty Name="tb_recipe1" Relationship="Self.FK_tb_comment_tb_recipe" FromRole="tb_comment" ToRole="tb_recipe" />
+  </EntityType>
+  <EntityType Name="tb_loved">
+    <Key>
+      <PropertyRef Name="id_member" />
+      <PropertyRef Name="id_recipe" />
+    </Key>
+    <Property Name="id_member" Type="Int32" Nullable="false" />
+    <Property Name="id_recipe" Type="Int32" Nullable="false" />
+    <Property Name="loved_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_member" Relationship="Self.FK__tb_loved__id_mem__4222D4EF" FromRole="tb_loved" ToRole="tb_member" />
+    <NavigationProperty Name="tb_recipe" Relationship="Self.FK__tb_loved__id_rec__4316F928" FromRole="tb_loved" ToRole="tb_recipe" />
+    <NavigationProperty Name="tb_recipe1" Relationship="Self.FK_tb_loved_tb_recipe" FromRole="tb_loved" ToRole="tb_recipe" />
+  </EntityType>
+  <EntityType Name="tb_member">
+    <Key>
+      <PropertyRef Name="id_member" />
+    </Key>
+    <Property Name="id_member" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_comment" Relationship="Self.FK__tb_commen__id_me__3E52440B" FromRole="tb_member" ToRole="tb_comment" />
+    <NavigationProperty Name="tb_loved" Relationship="Self.FK__tb_loved__id_mem__4222D4EF" FromRole="tb_member" ToRole="tb_loved" />
+  </EntityType>
+  <EntityType Name="tb_recipe">
+    <Key>
+      <PropertyRef Name="id_recipe" />
+    </Key>
+    <Property Name="id_recipe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="thumbnail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="id_admin" Type="Int32" />
+    <Property Name="rating" Type="Double" />
+    <NavigationProperty Name="tb_admin" Relationship="Self.FK__tb_recipe__id_ad__398D8EEE" FromRole="tb_recipe" ToRole="tb_admin" />
+    <NavigationProperty Name="tb_comment" Relationship="Self.FK__tb_commen__id_re__3F466844" FromRole="tb_recipe" ToRole="tb_comment" />
+    <NavigationProperty Name="tb_comment1" Relationship="Self.FK_tb_comment_tb_recipe" FromRole="tb_recipe" ToRole="tb_comment" />
+    <NavigationProperty Name="tb_loved" Relationship="Self.FK__tb_loved__id_rec__4316F928" FromRole="tb_recipe" ToRole="tb_loved" />
+    <NavigationProperty Name="tb_loved1" Relationship="Self.FK_tb_loved_tb_recipe" FromRole="tb_recipe" ToRole="tb_loved" />
+  </EntityType>
+  <Association Name="FK__tb_recipe__id_ad__398D8EEE">
+    <End Role="tb_admin" Type="Self.tb_admin" Multiplicity="0..1" />
+    <End Role="tb_recipe" Type="Self.tb_recipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_admin">
+        <PropertyRef Name="id_admin" />
+      </Principal>
+      <Dependent Role="tb_recipe">
+        <PropertyRef Name="id_admin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_commen__id_me__3E52440B">
+    <End Role="tb_member" Type="Self.tb_member" Multiplicity="0..1" />
+    <End Role="tb_comment" Type="Self.tb_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_member">
+        <PropertyRef Name="id_member" />
+      </Principal>
+      <Dependent Role="tb_comment">
+        <PropertyRef Name="id_member" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_commen__id_re__3F466844">
+    <End Role="tb_recipe" Type="Self.tb_recipe" Multiplicity="0..1" />
+    <End Role="tb_comment" Type="Self.tb_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_recipe">
+        <PropertyRef Name="id_recipe" />
+      </Principal>
+      <Dependent Role="tb_comment">
+        <PropertyRef Name="id_recipe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_comment_tb_recipe">
+    <End Role="tb_recipe" Type="Self.tb_recipe" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tb_comment" Type="Self.tb_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_recipe">
+        <PropertyRef Name="id_recipe" />
+      </Principal>
+      <Dependent Role="tb_comment">
+        <PropertyRef Name="id_recipe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_loved__id_mem__4222D4EF">
+    <End Role="tb_member" Type="Self.tb_member" Multiplicity="1" />
+    <End Role="tb_loved" Type="Self.tb_loved" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_member">
+        <PropertyRef Name="id_member" />
+      </Principal>
+      <Dependent Role="tb_loved">
+        <PropertyRef Name="id_member" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_loved__id_rec__4316F928">
+    <End Role="tb_recipe" Type="Self.tb_recipe" Multiplicity="1" />
+    <End Role="tb_loved" Type="Self.tb_loved" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_recipe">
+        <PropertyRef Name="id_recipe" />
+      </Principal>
+      <Dependent Role="tb_loved">
+        <PropertyRef Name="id_recipe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_loved_tb_recipe">
+    <End Role="tb_recipe" Type="Self.tb_recipe" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tb_loved" Type="Self.tb_loved" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_recipe">
+        <PropertyRef Name="id_recipe" />
+      </Principal>
+      <Dependent Role="tb_loved">
+        <PropertyRef Name="id_recipe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_tumpahrasaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tb_admin" EntityType="Self.tb_admin" />
+    <EntitySet Name="tb_comment" EntityType="Self.tb_comment" />
+    <EntitySet Name="tb_loved" EntityType="Self.tb_loved" />
+    <EntitySet Name="tb_member" EntityType="Self.tb_member" />
+    <EntitySet Name="tb_recipe" EntityType="Self.tb_recipe" />
+    <AssociationSet Name="FK__tb_recipe__id_ad__398D8EEE" Association="Self.FK__tb_recipe__id_ad__398D8EEE">
+      <End Role="tb_admin" EntitySet="tb_admin" />
+      <End Role="tb_recipe" EntitySet="tb_recipe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_commen__id_me__3E52440B" Association="Self.FK__tb_commen__id_me__3E52440B">
+      <End Role="tb_member" EntitySet="tb_member" />
+      <End Role="tb_comment" EntitySet="tb_comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_commen__id_re__3F466844" Association="Self.FK__tb_commen__id_re__3F466844">
+      <End Role="tb_recipe" EntitySet="tb_recipe" />
+      <End Role="tb_comment" EntitySet="tb_comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_comment_tb_recipe" Association="Self.FK_tb_comment_tb_recipe">
+      <End Role="tb_recipe" EntitySet="tb_recipe" />
+      <End Role="tb_comment" EntitySet="tb_comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_loved__id_mem__4222D4EF" Association="Self.FK__tb_loved__id_mem__4222D4EF">
+      <End Role="tb_member" EntitySet="tb_member" />
+      <End Role="tb_loved" EntitySet="tb_loved" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_loved__id_rec__4316F928" Association="Self.FK__tb_loved__id_rec__4316F928">
+      <End Role="tb_recipe" EntitySet="tb_recipe" />
+      <End Role="tb_loved" EntitySet="tb_loved" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_loved_tb_recipe" Association="Self.FK_tb_loved_tb_recipe">
+      <End Role="tb_recipe" EntitySet="tb_recipe" />
+      <End Role="tb_loved" EntitySet="tb_loved" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
