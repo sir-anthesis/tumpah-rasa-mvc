@@ -45,7 +45,8 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-primary" />
+            <input type="submit" value="Edit" class="btn btn-primary" />
+            @Html.ActionLink("Edit Thumbnail", "EditThumb", new { id = Model.id_recipe }, new { @class = "btn btn-warning ms-1" })
         </div>
     </div>
 </div>

@@ -1,0 +1,49 @@
+﻿@model TumpahRasa_MVC.Models.tb_recipe
+
+@{
+    ViewBag.Title = "EditThumb";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Thumbnail</h2>
+
+
+@using (Html.BeginForm("EditThumb", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.id_recipe)
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Thumbnail Active Now</label>
+        <div class="img" style="height: 30vw; width: 45vw; border-radius: 15px; overflow: hidden;">
+            <img src="~/Content/@Model.thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="form-group my-3">
+        @Html.LabelFor(model => model.thumbnail, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="thumbnail" class="form-control" />
+            @Html.ValidationMessageFor(model => model.thumbnail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Edit Thumbnail" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

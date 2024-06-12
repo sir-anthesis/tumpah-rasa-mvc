@@ -101,27 +101,76 @@ namespace TumpahRasa_MVC.Controllers
             return View(recipe);
         }
 
+        // GET: Admin/EditThumb/5
+        public ActionResult EditThumb(int id)
+        {
+            if (db.tb_recipe.Find(id) == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            tb_recipe recipe = db.tb_recipe.Find(id);
+            if (recipe == null)
+            {
+                return HttpNotFound();
+            }
+            return View(recipe);
+        }
+
+        // POST: Admin/EditThumb/5
+        [HttpPost]
+        public ActionResult EditThumb([Bind(Include = "id_recipe")] tb_recipe recipe, HttpPostedFileBase thumbnail)
+        {
+            if (ModelState.IsValid)
+            {
+                // Retrieve the existing entity from the database
+                var existingRecipe = db.tb_recipe.Find(recipe.id_recipe);
+
+                if (existingRecipe == null)
+                {
+                    return HttpNotFound();
+                }
+
+                if (thumbnail != null && thumbnail.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(thumbnail.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content"), fileName);
+                    thumbnail.SaveAs(path);
+
+                    // Update only the necessary properties
+                    existingRecipe.thumbnail = fileName;
+                }
+
+                // Save changes
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(recipe);
+        }
+
 
         // GET: Admin/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            // Fetch the recipe to delete by id
+            var recipe = db.tb_recipe.Find(id);
+            if (recipe == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(recipe);
         }
 
         // POST: Admin/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            tb_recipe recipe = db.tb_recipe.Find(id);
+            db.tb_recipe.Remove(recipe);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

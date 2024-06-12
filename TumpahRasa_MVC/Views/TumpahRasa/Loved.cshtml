@@ -1,0 +1,31 @@
+﻿@model IEnumerable<TumpahRasa_MVC.Models.tb_recipe>
+
+@{
+    ViewBag.Title = "Loved";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<!-- Loved Section Started -->
+<section class="dishes" id="loved" style="padding-top:8em;">
+
+    <h3 class="sub-heading">Something You Ever Felt Before!</h3>
+    <h1 class="heading">Your Loved Recipes</h1>
+
+    <div class="box-container">
+
+        @foreach (var item in Model)
+        {
+            <div class="box">
+                <div class="icons">
+                    <a class="fas fa-heart stars" href="@Url.Action("Detail", "ControllerName", new { id = item.id_recipe })"></a>
+                    <p>@item.rating <i class="fas fa-star"></i></p>
+                </div>
+                <img src="~/Content/TumpahRasa/thumbs/@item.thumbnail" alt="image not available">
+                <h3>@item.name</h3>
+                <a href="@Url.Action("Detail", "ControllerName", new { id = item.id_recipe })" class="btn">Open</a>
+            </div>
+        }
+
+    </div>
+
+</section>

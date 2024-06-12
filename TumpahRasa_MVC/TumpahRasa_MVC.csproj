@@ -97,6 +97,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
+    <Content Include="Content\TumpahRasa\asset\abt.jpg" />
+    <Content Include="Content\TumpahRasa\css\style.css" />
+    <Content Include="Content\TumpahRasa\js\script3.js" />
+    <Content Include="Content\TumpahRasa\thumbs\1.png" />
+    <Content Include="Content\TumpahRasa\thumbs\1663740198404 %281%29.jpg" />
+    <Content Include="Content\TumpahRasa\thumbs\2.png" />
+    <Content Include="Content\TumpahRasa\thumbs\3.png" />
+    <Content Include="Content\TumpahRasa\thumbs\5003.jpg" />
+    <Content Include="Content\TumpahRasa\thumbs\adjasd.jpg" />
+    <Content Include="Content\TumpahRasa\thumbs\baksooo.jpg" />
+    <Content Include="Content\TumpahRasa\thumbs\cross.jpg" />
+    <Content Include="Content\TumpahRasa\thumbs\cxzc.png" />
+    <Content Include="Content\TumpahRasa\thumbs\howl.jpg" />
+    <Content Include="Content\TumpahRasa\thumbs\pizza.jpeg" />
+    <Content Include="Content\TumpahRasa\thumbs\pizzacizza.jpg" />
+    <Content Include="Content\TumpahRasa\thumbs\Resep-Rendang-Daging-Sapi-Untuk-Lebaran-Gurih-dan-Nikmat.jpg" />
+    <Content Include="Content\TumpahRasa\thumbs\reyna.jpg" />
+    <Content Include="Content\TumpahRasa\thumbs\rmh.jpg" />
+    <Content Include="Content\TumpahRasa\thumbs\wallpaperflare.com_wallpaper %282%29.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -501,6 +520,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\TumpahRasa\thumbs\e2.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -517,6 +537,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\TumpahRasaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -843,6 +864,11 @@
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Views\Admin\EditThumb.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\TumpahRasa\Index.cshtml" />
+    <Content Include="Views\_PartialPage1.cshtml" />
+    <Content Include="Views\TumpahRasa\Loved.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
