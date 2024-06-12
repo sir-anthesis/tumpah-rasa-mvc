@@ -48,6 +48,10 @@ namespace TumpahRasa_MVC.Controllers
                     model.thumbnail = fileName; // Save the relative path
                 }
 
+                model.created_at = DateTime.Now;
+                model.id_admin = 1;
+                model.rating = 0;
+
                 db.tb_recipe.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,24 +63,44 @@ namespace TumpahRasa_MVC.Controllers
         // GET: Admin/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            if (db.tb_recipe.Find(id) == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            tb_recipe recipe = db.tb_recipe.Find(id);
+            if (recipe == null)
+            {
+                return HttpNotFound();
+            }
+            return View(recipe);
         }
 
         // POST: Admin/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit([Bind(Include = "id_recipe, name, description")] tb_recipe recipe)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                // Retrieve the existing entity from the database
+                var existingRecipe = db.tb_recipe.Find(recipe.id_recipe);
 
+                if (existingRecipe == null)
+                {
+                    return HttpNotFound();
+                }
+
+                // Update only the necessary properties
+                existingRecipe.name = recipe.name;
+                existingRecipe.description = recipe.description;
+
+                // Save changes
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(recipe);
         }
+
 
         // GET: Admin/Delete/5
         public ActionResult Delete(int id)
