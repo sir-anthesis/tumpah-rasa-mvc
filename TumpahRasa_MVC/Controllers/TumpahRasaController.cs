@@ -61,28 +61,25 @@ namespace TumpahRasa_MVC.Controllers
             }
         }
 
-        // GET: Admin/Unloving/5
-        public ActionResult Unloving(int id)
+        // POST: TumpahRasa/Unloving/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Unloving(int recipeId)
         {
-            // Fetch the recipe to delete by id
-            var recipe = db.tb_recipe.Find(id);
-            if (recipe == null)
+            int memberId = 1;
+            // Find the recipe by id_recipe and id_member
+            tb_loved lovedRecipe = db.tb_loved.FirstOrDefault(r => r.id_recipe == recipeId && r.id_member == memberId);
+
+            if (lovedRecipe == null)
             {
+                // Handle the case where the recipe doesn't exist or doesn't belong to the member
                 return HttpNotFound();
             }
 
-            return View(recipe);
-        }
-
-        // POST: Admin/Unloving/5
-        [HttpPost, ActionName("Unloving")]
-        [ValidateAntiForgeryToken]
-        public ActionResult UnlovingConfirmed(int id)
-        {
-            tb_recipe recipe = db.tb_recipe.Find(id);
-            db.tb_recipe.Remove(recipe);
+            db.tb_loved.Remove(lovedRecipe);
             db.SaveChanges();
-            return RedirectToAction("Index");
+
+            return RedirectToAction("Loved");
         }
 
 
