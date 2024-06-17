@@ -35,7 +35,7 @@ namespace TumpahRasa_MVC.Controllers
         [HttpPost]
         public ActionResult Loving(int id, tb_loved model)
         {
-            try 
+            try
             {
                 model.id_member = 1;
                 model.id_recipe = id;
@@ -45,13 +45,46 @@ namespace TumpahRasa_MVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Loved");
             }
-
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                ViewBag.ErrorMessage = ex;
+                // Loop to find the innermost exception message
+                var exceptionMessage = ex.Message;
+                var innerEx = ex.InnerException;
+                while (innerEx != null)
+                {
+                    exceptionMessage = innerEx.Message;
+                    innerEx = innerEx.InnerException;
+                }
+
+                TempData["ErrorMessage"] = exceptionMessage;
                 return RedirectToAction("Index");
             }
         }
+
+        // GET: Admin/Unloving/5
+        public ActionResult Unloving(int id)
+        {
+            // Fetch the recipe to delete by id
+            var recipe = db.tb_recipe.Find(id);
+            if (recipe == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(recipe);
+        }
+
+        // POST: Admin/Unloving/5
+        [HttpPost, ActionName("Unloving")]
+        [ValidateAntiForgeryToken]
+        public ActionResult UnlovingConfirmed(int id)
+        {
+            tb_recipe recipe = db.tb_recipe.Find(id);
+            db.tb_recipe.Remove(recipe);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

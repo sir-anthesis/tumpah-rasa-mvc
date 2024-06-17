@@ -101,3 +101,12 @@
 
 </section>
 <!-- Dishes Section Ended -->
+
+<script>
+@if (TempData["ErrorMessage"] != null)
+    {
+        <text>
+        alert('@TempData["ErrorMessage"]');
+        </text>
+    }
+</script>
