@@ -72,22 +72,24 @@
     }
 
     <!-- Comment Section Started -->
-    <section class="comment" id="comment">
-        <h3 class="sub-heading">Tell Us</h3>
-        <h1 class="heading">Your Thoughts!</h1>
+<section class="comment" id="comment">
+    <h3 class="sub-heading">Tell Us</h3>
+    <h1 class="heading">Your Thoughts!</h1>
 
-        <form1 method="post">
-            <div class="wrap">
-                <label for="" class="sub-heading">Rate</label>
-                <input type="number" name="rate">
-            </div>
-            <div class="wrap">
-                <label for="" class="sub-heading">Comment</label>
-                <textarea name="cmnt" id="" rows="10"></textarea>
-            </div>
-            <input type="submit" value="Add Review" class="btn text-center" />
-        </form1>
-    </section>
+    @using (Html.BeginForm("CreateComment", "TumpahRasa", FormMethod.Post))
+    {
+        @Html.HiddenFor(model => model.NewComment.id_recipe, new { Value = Model.DetailedRecipe.id_recipe })
+        <div class="wrap">
+            <label for="rate" class="sub-heading">Rate</label>
+            @Html.EditorFor(model => model.NewComment.rating, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+        </div>
+        <div class="wrap">
+            <label for="cmnt" class="sub-heading">Comment</label>
+            @Html.TextAreaFor(model => model.NewComment.comment, new { @class = "form-control", rows = 10 })
+        </div>
+        <input type="submit" value="Add Review" class="btn text-center" />
+    }
+</section>
     <!-- Comment Section Ended -->
 
 </section>

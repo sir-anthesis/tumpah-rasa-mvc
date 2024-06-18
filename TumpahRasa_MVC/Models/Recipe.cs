@@ -10,6 +10,7 @@ namespace TumpahRasa_MVC.Models
         public tb_recipe DetailedRecipe { get; set; }
         public IEnumerable<tb_recipe> OtherRecipes { get; set; }
         public List<CommentView> Comments { get; set; }
+        public tb_comment NewComment { get; set; }
     }
 
     public class CommentView
@@ -22,4 +23,6 @@ namespace TumpahRasa_MVC.Models
         public float Rating { get; set; }
         public string CreatedAt { get; set; }
     }
+
+
 }

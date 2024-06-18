@@ -18,7 +18,7 @@
                         <span>Our Special Dish</span>
                         <h3>@item.name</h3>
                         <p>@item.rating <i class="fas fa-star"></i></p>
-                        <a class="btn" href="@Url.Action("Detail", "ControllerName", new { id = item.id_recipe })">VIEW</a>
+                        <a class="btn" href="@Url.Action("Recipe", "TumpahRasa", new { id = item.id_recipe })">VIEW</a>
                     </div>
                     <div class="image">
                         <img src="~/Content/TumpahRasa/thumbs/@item.thumbnail" alt="image not available">
@@ -93,7 +93,7 @@
                 </div>
                 <img src="~/Content/TumpahRasa/thumbs/@item.thumbnail" alt="image not available">
                 <h3>@item.name</h3>
-                <a href="@Url.Action("Detail", "ControllerName", new { id = item.id_recipe })" class="btn">Open</a>
+                <a href="@Url.Action("Recipe", "TumpahRasa", new { id = item.id_recipe })" class="btn">Open</a>
             </div>
         }
 

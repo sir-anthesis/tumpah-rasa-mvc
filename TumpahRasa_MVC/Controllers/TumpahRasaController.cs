@@ -58,7 +58,8 @@ namespace TumpahRasa_MVC.Controllers
             {
                 DetailedRecipe = detailedRecipe,
                 OtherRecipes = otherRecipes,
-                Comments = comments.ToList()
+                Comments = comments.ToList(),
+                NewComment = new tb_comment()
             };
 
             return View(viewModel);
@@ -128,6 +129,22 @@ namespace TumpahRasa_MVC.Controllers
             return RedirectToAction("Loved");
         }
 
+        // POST: Admin/Create
+        [HttpPost]
+        public ActionResult CreateComment(Recipe model)
+        {
+            if (ModelState.IsValid)
+            {
+                var comment = model.NewComment;
+                comment.created_at = DateTime.Now;
+                comment.id_member = 1;
 
+                db.tb_comment.Add(comment);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
+        }
     }
 }
