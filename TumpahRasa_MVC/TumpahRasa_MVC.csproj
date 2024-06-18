@@ -124,6 +124,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Auth\app.js" />
+    <Content Include="Content\Auth\img\img1.jpg" />
+    <Content Include="Content\Auth\img\img2.jpg" />
+    <Content Include="Content\Auth\img\log.svg" />
+    <Content Include="Content\Auth\img\register.svg" />
+    <Content Include="Content\Auth\style3.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\TumpahRasa\asset\abt.jpg" />
     <Content Include="Content\TumpahRasa\css\style.css" />
@@ -565,6 +571,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\TumpahRasaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -898,6 +905,7 @@
     <Content Include="Views\TumpahRasa\Index.cshtml" />
     <Content Include="Views\TumpahRasa\Loved.cshtml" />
     <Content Include="Views\TumpahRasa\Recipe.cshtml" />
+    <Content Include="Views\Auth\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -34,8 +34,13 @@
         </nav>
 
         <div class="icons" style="display:flex; gap:1rem; justify-content:center; align-items:center;">
-            <p style="font-size:1rem;">Welcome, User</p>
-            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="fa-solid fa-door-open" OnClick="LinkButton1_Click"></asp:LinkButton>
+            <h3 style="font-size: large">Welcome, @Session["memberName"]</h3>
+            @using (Html.BeginForm("Logout", "Auth"))
+            {
+                <button type="submit">
+                    <i class="fa-solid fa-door-open"></i>
+                </button>
+            }
         </div>
 
     </header>

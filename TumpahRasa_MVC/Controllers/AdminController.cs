@@ -14,10 +14,23 @@ namespace TumpahRasa_MVC.Controllers
     {
         private db_tumpahrasaEntities db = new db_tumpahrasaEntities();
 
+
         // GET: Admin
         public ActionResult Index()
         {
-            return View(db.tb_recipe.ToList());
+            if (Session["role"] != null && Session["role"].ToString() == "member")
+            {
+                return RedirectToAction("Index", "TumpahRasa");
+            }
+            else if (Session["role"] == null)
+            {
+                return RedirectToAction("Index", "Auth");
+            }
+            else
+            {
+                return View(db.tb_recipe.ToList());
+            }
+            
         }
 
         // GET: Admin/Details/5
@@ -36,6 +49,15 @@ namespace TumpahRasa_MVC.Controllers
         [HttpPost]
         public ActionResult Create(tb_recipe model, HttpPostedFileBase thumbnail)
         {
+            if (Session["role"] != null && Session["role"].ToString() == "member")
+            {
+                return RedirectToAction("Index", "TumpahRasa");
+            }
+            else if (Session["role"] == null)
+            {
+                return RedirectToAction("Index", "Auth");
+            }
+
             if (ModelState.IsValid)
             {
                 if (thumbnail != null && thumbnail.ContentLength > 0)
@@ -49,7 +71,7 @@ namespace TumpahRasa_MVC.Controllers
                 }
 
                 model.created_at = DateTime.Now;
-                model.id_admin = 1;
+                model.id_admin = Convert.ToInt32(Session["adminId"]);
                 model.rating = 0;
 
                 db.tb_recipe.Add(model);
@@ -63,6 +85,15 @@ namespace TumpahRasa_MVC.Controllers
         // GET: Admin/Edit/5
         public ActionResult Edit(int id)
         {
+            if (Session["role"] != null && Session["role"].ToString() == "member")
+            {
+                return RedirectToAction("Index", "TumpahRasa");
+            }
+            else if (Session["role"] == null)
+            {
+                return RedirectToAction("Index", "Auth");
+            }
+
             if (db.tb_recipe.Find(id) == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -104,6 +135,15 @@ namespace TumpahRasa_MVC.Controllers
         // GET: Admin/EditThumb/5
         public ActionResult EditThumb(int id)
         {
+            if (Session["role"] != null && Session["role"].ToString() == "member")
+            {
+                return RedirectToAction("Index", "TumpahRasa");
+            }
+            else if (Session["role"] == null)
+            {
+                return RedirectToAction("Index", "Auth");
+            }
+
             if (db.tb_recipe.Find(id) == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

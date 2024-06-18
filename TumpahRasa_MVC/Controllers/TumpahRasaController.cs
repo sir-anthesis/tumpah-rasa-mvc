@@ -17,12 +17,32 @@ namespace TumpahRasa_MVC.Controllers
         // GET: TumpahRasa
         public ActionResult Index()
         {
-            return View(db.tb_recipe.ToList());
+            if (Session["role"] != null && Session["role"].ToString() == "admin")
+            {
+                return RedirectToAction("Index", "Admin");
+            }
+            else if (Session["role"] == null)
+            {
+                return RedirectToAction("Index", "Auth");
+            }
+            else
+            {
+                return View(db.tb_recipe.ToList());
+            }
         }
 
         // GET: TumpahRasa/Recipe/5
         public ActionResult Recipe(int id)
         {
+            if (Session["role"] != null && Session["role"].ToString() == "admin")
+            {
+                return RedirectToAction("Index", "Admin");
+            }
+            else if (Session["role"] == null)
+            {
+                return RedirectToAction("Index", "Auth");
+            }
+
             if (db.tb_recipe.Find(id) == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -68,7 +88,16 @@ namespace TumpahRasa_MVC.Controllers
         // GET: TumpahRasa/Loved
         public ActionResult Loved()
         {
-            int userId = 1;
+            if (Session["role"] != null && Session["role"].ToString() == "admin")
+            {
+                return RedirectToAction("Index", "Admin");
+            }
+            else if (Session["role"] == null)
+            {
+                return RedirectToAction("Index", "Auth");
+            }
+
+            int userId = Convert.ToInt32(Session["memberId"]);
 
             var lovedRecipes = from loved in db.tb_loved
                                join recipe in db.tb_recipe on loved.id_recipe equals recipe.id_recipe
@@ -84,7 +113,7 @@ namespace TumpahRasa_MVC.Controllers
         {
             try
             {
-                model.id_member = 1;
+                model.id_member = Convert.ToInt32(Session["memberId"]);
                 model.id_recipe = id;
                 model.loved_at = DateTime.Now;
 
@@ -113,7 +142,7 @@ namespace TumpahRasa_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Unloving(int recipeId)
         {
-            int memberId = 1;
+            int memberId = Convert.ToInt32(Session["memberId"]);
             // Find the recipe by id_recipe and id_member
             tb_loved lovedRecipe = db.tb_loved.FirstOrDefault(r => r.id_recipe == recipeId && r.id_member == memberId);
 
@@ -129,7 +158,6 @@ namespace TumpahRasa_MVC.Controllers
             return RedirectToAction("Loved");
         }
 
-        // POST: Admin/Create
         [HttpPost]
         public ActionResult CreateComment(Recipe model)
         {
@@ -137,7 +165,7 @@ namespace TumpahRasa_MVC.Controllers
             {
                 var comment = model.NewComment;
                 comment.created_at = DateTime.Now;
-                comment.id_member = 1;
+                comment.id_member = Convert.ToInt32(Session["memberId"]);
 
                 db.tb_comment.Add(comment);
                 db.SaveChanges();
