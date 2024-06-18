@@ -15,10 +15,10 @@ namespace TumpahRasa_MVC.Models
     public partial class tb_comment
     {
         public int id_comment { get; set; }
-        public Nullable<int> id_member { get; set; }
-        public Nullable<int> id_recipe { get; set; }
+        public int id_member { get; set; }
+        public int id_recipe { get; set; }
         public string comment { get; set; }
-        public Nullable<int> rating { get; set; }
+        public int rating { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }
     
         public virtual tb_member tb_member { get; set; }

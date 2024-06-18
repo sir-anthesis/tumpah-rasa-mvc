@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Ganss.Xss;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using TumpahRasa_MVC.Models;
@@ -16,6 +18,50 @@ namespace TumpahRasa_MVC.Controllers
         public ActionResult Index()
         {
             return View(db.tb_recipe.ToList());
+        }
+
+        // GET: TumpahRasa/Recipe/5
+        public ActionResult Recipe(int id)
+        {
+            if (db.tb_recipe.Find(id) == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            // detailedRecipe
+            var detailedRecipe = db.tb_recipe.Find(id);
+            if (detailedRecipe == null)
+            {
+                return HttpNotFound();
+            }
+
+            detailedRecipe.description = HttpUtility.HtmlDecode(detailedRecipe.description);
+
+            // otherRecipes
+            var otherRecipes = db.tb_recipe.Take(4).ToList();
+
+            // comments with member names
+            var comments = from comment in db.tb_comment
+                           join member in db.tb_member on comment.id_member equals member.id_member
+                           where comment.id_recipe == id
+                           select new CommentView
+                           {
+                               IdComment = comment.id_comment,
+                               IdMember = comment.id_member,
+                               IdRecipe = comment.id_recipe,
+                               Comment = comment.comment,
+                               MemberName = member.name,
+                               Rating = comment.rating
+                           };
+
+            var viewModel = new Recipe
+            {
+                DetailedRecipe = detailedRecipe,
+                OtherRecipes = otherRecipes,
+                Comments = comments.ToList()
+            };
+
+            return View(viewModel);
         }
 
         // GET: TumpahRasa/Loved

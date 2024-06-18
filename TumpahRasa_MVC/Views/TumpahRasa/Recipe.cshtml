@@ -1,0 +1,94 @@
+﻿@model TumpahRasa_MVC.Models.Recipe
+
+@{
+    ViewBag.Title = "Recipe";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="row-detail">
+    <!-- Detail Section Started -->
+    <section class="detail" id="detail">
+        <div class="image">
+            <img src="~/Content/TumpahRasa/Thumbs/@Model.DetailedRecipe.thumbnail" alt="">
+        </div>
+        <div class="content">
+            <div class="info">
+                <h1 class="heading">@Model.DetailedRecipe.name</h1>
+                <h3 class="sub-heading">@Model.DetailedRecipe.created_at <i class="fas fa-clock"></i> <span style="margin: 0 1rem">||</span> @Model.DetailedRecipe.rating <i class="fas fa-star"></i></h3>
+            </div>
+            <div class="text" id="description">
+                @Html.Raw(Model.DetailedRecipe.description)
+            </div>
+        </div>
+    </section>
+
+    <!-- Others Section Started -->
+    <section class="others box-container" id="others">
+        <h3 class="sub-heading">Something You Never Felt Before!</h3>
+        @foreach (var item in Model.OtherRecipes)
+        {
+            <div class="box">
+                <div class="icons">
+                    <button class="fas fa-heart stars"></button>
+                    <p>@item.rating <i class="fas fa-star"></i></p>
+                </div>
+                <img src="~/Content/TumpahRasa/thumbs/@item.thumbnail" alt="">
+                <h3>@item.name</h3>
+                <a href="@item.id_recipe" class="btn">Open</a>
+            </div>
+        }
+    </section>
+</div>
+
+<!-- Review Section Started -->
+<section class="review" id="review">
+    @if (Model.Comments.Any())
+    {
+    <h3 class="sub-heading">Tumpah Rasa's Canvas</h3>
+    <h1 class="heading">What They Say!</h1>
+
+    <div class="swiper review-slider">
+        <div class="swiper-wrapper">
+            @foreach (var item in Model.Comments)
+            {
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <div class="user-info">
+                            <h3>@item.MemberName</h3>
+                            <div class="stars">
+                                <h4 style="display: inline;">@item.Rating</h4>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        @item.Comment
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+    }
+
+    <!-- Comment Section Started -->
+    <section class="comment" id="comment">
+        <h3 class="sub-heading">Tell Us</h3>
+        <h1 class="heading">Your Thoughts!</h1>
+
+        <form1 method="post">
+            <div class="wrap">
+                <label for="" class="sub-heading">Rate</label>
+                <input type="number" name="rate">
+            </div>
+            <div class="wrap">
+                <label for="" class="sub-heading">Comment</label>
+                <textarea name="cmnt" id="" rows="10"></textarea>
+            </div>
+            <input type="submit" value="Add Review" class="btn text-center" />
+        </form1>
+    </section>
+    <!-- Comment Section Ended -->
+
+</section>
+<!-- Review Section Ended -->
